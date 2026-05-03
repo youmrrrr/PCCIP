@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вариант №11 — Технология CSS</title>
+    
+    <!-- Способ 1: внешний файл стилей (style.css) -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Способ 3: глобальная таблица стилей (тег <style>) -->
+    <style>
+
+        h3 {
+            font-weight: bold;          
+            color: #0000FF;          
+            text-align: justify;       
+        }
+        .fio {
+            font-weight: normal;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Способ 2: внутренние (inline) стили -->
+    
+    <p class="fio" style="font-style: italic; background-color: #e6e6fa;">
+        <strong>ФИО учащегося:</strong> Пекарь Маргарита Дмитриевна
+    </p>
+    
+    <h3>Дата рождения: 21 сентября 2007 года</h3>
+    
+    <div id="hobby">
+        <strong>Мои увлечения:</strong> Программирование, чтение книг, спорт, путешествия
+    </div>
+
+    <p style="margin-top: 30px;">
+        <a href="R:/ПССИП/Тем.Контроль/архив/ПД.zip">Скачать архив</a>
+    </p>
+
+</body>
+</html>

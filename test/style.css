@@ -1,0 +1,484 @@
+/* ======== СПОСОБ 2: ИМПОРТИРОВАНИЕ ======== */
+/* СТИЛЬ: @import - импорт внешнего файла */
+@import url("import.css");
+
+/* ========== СЕЛЕКТОРЫ (10 ВИДОВ) ========== */
+
+/* 1. УНИВЕРСАЛЬНЫЙ СЕЛЕКТОР (*) - применяется ко всем элементам */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. СЕЛЕКТОР ТЕГА (body, h1, h2, h3) - применяется к тегам */
+body {
+    font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+    color: #3a2c1f;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* СЕЛЕКТОР ТЕГА h1 */
+h1 {
+    font-family: 'Montserrat', 'Arial Black', sans-serif;
+    font-size: 2.5rem;
+    color: #7a4d2e;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid #c9a87c;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+/* СЕЛЕКТОР ТЕГА h2 */
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+    color: #8b5a2b;
+    margin: 20px 0 15px;
+}
+
+/* СЕЛЕКТОР ТЕГА h3 */
+h3 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: #b46f3c;
+}
+
+/* 3. СЕЛЕКТОР КЛАССА (.highlight-text) - применяется к элементам с class="highlight-text" */
+.highlight-text {
+    background: #f9e4c4;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 4. СЕЛЕКТОР ИДЕНТИФИКАТОРА (#about) - применяется к элементу с id="about" */
+#about {
+    background: rgba(255, 248, 240, 0.7);
+    border-radius: 20px;
+    padding: 25px;
+    margin: 30px 0;
+    border: 2px solid #d4a76a;
+    backdrop-filter: blur(5px);
+}
+
+/* 5. ДОЧЕРНИЙ СЕЛЕКТОР (nav > ul > li) - применяется только к прямым потомкам */
+nav > ul > li {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative;
+}
+
+/* 6. СОСЕДНИЙ СЕЛЕКТОР (h2 + p) - применяется к p, который идет сразу после h2 */
+h2 + p {
+    font-weight: 500;
+    color: #5d3e1e;
+    padding-left: 15px;
+    border-left: 4px solid #c9a87c;
+}
+
+/* 7. СЕЛЕКТОР АТРИБУТА (input[type="text"]) - применяется к input с определенным атрибутом */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    border: 2px solid #d9b382;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* 8. ПСЕВДОКЛАСС (:hover, :focus) - применяется в определенном состоянии элемента */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #8b5a2b;
+    box-shadow: 0 0 15px rgba(201, 168, 124, 0.5);
+    outline: none;
+    transform: scale(1.02);
+}
+
+/* ПСЕВДОКЛАСС :hover для ссылок */
+a:hover {
+    color: #d98b48;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ПСЕВДОКЛАСС :hover для навигации */
+nav a:hover {
+    background: linear-gradient(45deg, #c9a87c, #8b5a2b);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+/* 9. ПСЕВДОЭЛЕМЕНТ (::first-letter, ::before, ::after) - применяется к части элемента */
+p::first-letter {
+    font-size: 200%;
+    color: #b46f3c;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    margin-right: 5px;
+}
+
+/* ПСЕВДОЭЛЕМЕНТ ::before - вставляет контент перед элементом */
+blockquote::before {
+    content: '"';
+    font-size: 48px;
+    color: #c9a87c;
+    font-family: serif;
+    line-height: 0;
+    position: relative;
+    top: 20px;
+    left: -10px;
+}
+
+/* ПСЕВДОЭЛЕМЕНТ ::after - вставляет контент после элемента */
+blockquote::after {
+    content: '"';
+    font-size: 48px;
+    color: #c9a87c;
+    font-family: serif;
+    line-height: 0;
+    position: relative;
+    bottom: -10px;
+    right: -10px;
+}
+
+/* 10. КОНТЕКСТНЫЙ СЕЛЕКТОР (article p) - применяется к p внутри article (любой вложенности) */
+article p {
+    margin-bottom: 15px;
+}
+
+footer {
+    border-top: 3px solid #8b5a2b; /* px - пиксели */
+    margin-top: 50px; /* px */
+    padding: 20px; /* px */
+    font-size: 14px; /* px */
+    background-color: #3a2c1f;
+    color: #f5e6d3;
+    text-align: center;
+}
+
+/* ОТНОСИТЕЛЬНЫЕ ЕДИНИЦЫ (%, em, rem) */
+section {
+    width: 90%; /* % - процент от родителя */
+    max-width: 1200px;
+    margin: 0 auto 3em; /* em - относительно текущего шрифта */
+    padding: 2rem; /* rem - относительно шрифта корневого элемента */
+}
+
+/* ВЫЧИСЛЯЕМЫЕ ЕДИНИЦЫ (vw, vh, calc) */
+main {
+    min-height: calc(100vh - 200px); /* calc - вычисляемое значение, vh - высота окна браузера */
+}
+
+header {
+    width: 100vw; /* vw - ширина окна браузера */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 30px calc(50vw - 50%); /* calc с разными единицами */
+    background: linear-gradient(90deg, #c9a87c, #e8d9c5);
+}
+
+/* ЦВЕТ И ФОН */
+nav {
+    background: rgba(201, 168, 124, 0.3); 
+    backdrop-filter: blur(10px); 
+    padding: 15px;
+    border-radius: 50px;
+    margin: 20px 0;
+}
+
+del {
+    text-decoration: line-through wavy #ff6b6b; /* волнистое зачеркивание */
+}
+
+ins {
+    text-decoration: none;
+    background: #e6cba0;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+mark {
+    background: linear-gradient(120deg, #f9e4c4 0%, #f9e4c4 100%);
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+/* СТИЛИЗАЦИЯ ГИПЕРССЫЛОК */
+a {
+    color: #7a4d2e;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* СЕЛЕКТОР :not() - исключение для ссылок в навигации */
+a:not(nav a):hover {
+    color: #b46f3c;
+}
+
+a:not(nav a)::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #b46f3c;
+    transition: width 0.3s ease;
+}
+
+a:not(nav a):hover::after {
+    width: 100%;
+}
+
+img {
+    border-radius: 15px; 
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3); 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    border: 3px solid white;
+    max-width: 100%;
+    height: auto;
+}
+
+img:hover {
+    transform: scale(1.05) rotate(1deg); 
+    box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.4);
+}
+
+/* Круглое изображение в таблице */
+table img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 3px solid #c9a87c;
+}
+
+/* СТИЛИЗАЦИЯ СПИСКОВ */
+ul {
+    list-style-type: none; 
+    padding-left: 20px;
+}
+
+ul li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 8px;
+}
+
+ul li::before {
+    content: '🐱'; 
+    position: absolute;
+    left: 0;
+    color: #b46f3c;
+    font-size: 1.2em;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+    transition: transform 0.2s ease;
+}
+
+ul li:hover::before {
+    transform: scale(1.2) rotate(10deg);
+}
+
+ol {
+    counter-reset: custom-counter;
+    list-style-type: none;
+    padding-left: 35px;
+}
+
+ol li {
+    counter-increment: custom-counter;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 40px;
+}
+
+ol li::before {
+    content: counter(custom-counter);
+    position: absolute;
+    left: 0;
+    top: -2px;
+    background: linear-gradient(135deg, #c9a87c, #8b5a2b);
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* убираем двойные границы */
+    margin: 25px 0;
+    font-size: 0.9em;
+    border-radius: 15px; /* скругление углов */
+    overflow: hidden; /* для скругления углов */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+th {
+    background: linear-gradient(135deg, #8b5a2b, #5d3e1e);
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 15px;
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #dddddd;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+tr:nth-child(even) td {
+    background-color: rgba(249, 228, 196, 0.3); 
+}
+
+tr:hover td {
+    background: linear-gradient(45deg, rgba(201, 168, 124, 0.2), rgba(139, 90, 43, 0.2));
+}
+
+input[type="submit"],
+input[type="reset"],
+button {
+    background: linear-gradient(45deg, #c9a87c, #8b5a2b);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(139, 90, 43, 0.3);
+    margin: 10px 5px;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+button:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 25px rgba(139, 90, 43, 0.5);
+    background: linear-gradient(45deg, #8b5a2b, #c9a87c);
+}
+
+input[type="submit"]:active,
+input[type="reset"]:active {
+    transform: translateY(-1px);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    accent-color: #b46f3c; 
+}
+
+select[multiple] {
+    height: auto;
+    min-height: 120px;
+}
+
+fieldset {
+    border: 2px solid #c9a87c;
+    border-radius: 20px;
+    padding: 25px;
+    margin: 20px 0;
+    background: rgba(255, 248, 240, 0.5);
+}
+
+legend {
+    font-weight: bold;
+    color: #8b5a2b;
+    font-size: 1.3em;
+    padding: 0 15px;
+    background: white;
+    border-radius: 25px;
+    border: 2px solid #c9a87c;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+blockquote {
+    font-size: 1.3em;
+    font-style: italic;
+    padding: 30px 40px;
+    background: linear-gradient(135deg, #f9e4c4, #f5dbb1);
+    border-radius: 50px 50px 50px 0;
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+section#care article ol li {
+    font-weight: 700;
+    color: #2c5f2d; 
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    /* Вертикальная навигация на мобильных */
+    nav > ul > li {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    header {
+        padding: 20px;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        left: 0;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    section {
+        width: 100%;
+        padding: 1rem;
+    }
+    
+    /* Адаптивные видео */
+    video, iframe {
+        width: 100%;
+        height: auto;
+    }
+}

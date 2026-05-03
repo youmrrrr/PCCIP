@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Мета-теги: ключевые слова -->
+    <meta charset="UTF-8">
+    <meta name="keywords" content="HTML, Пекарь">
+
+    <title>Пекарь Маргарита Дмитриевна</title>
+
+</head>
+<body>
+
+<!-- ЗАДАНИЕ 2  -->
+<h3 align="right" id="fio_anchor">Пекарь Маргарита Дмитриевна</h3>
+
+<p><strong style="color: green;">Группа: ПЗТ-42</strong></p>
+
+<p align="right"><i>Курс: 3 курс</i></p>
+
+<p align="center"><s>Мои увлечения: программирование, чтение философской литературы, настольный теннис, дизайн</s></p>
+
+<hr>
+
+<!-- ЗАДАНИЕ 3 -->
+<h3>Список терминов</h3>
+<dl>
+    <dt>Онтология</dt>
+    <dd>Раздел философии, изучающий фундаментальные принципы бытия.</dd>
+    
+    <dt>Глоссалогия</dt>
+    <dd>Философская дисциплина, занимающаяся исследованиями критики и теориями познания.</dd>
+    
+    <dt>Производственные отношения</dt>
+    <dd>Совокупность отношений между людьми, складывающихся в процессе общественного производства. Обмен, распределение материальных благ и услуг.</dd>
+</dl>
+
+<hr>
+
+<!--  ЗАДАНИЕ 4  -->
+<div align="center">
+    <!-- Изображение размером 300x80, поясняющая подпись -->
+    <img src="pic.png" alt="Пример изображения" width="300" height="80" onerror="this.onerror=null; this.src='https://picsum.photos/id/104/300/80'; this.alt='Запасное изображение'">
+    <br>Поясняющая подпись к изображению
+</div>
+
+<hr>
+
+<!-- ЗАДАНИЕ 5 -->
+<!-- Гиперссылка в виде картинки на другую страницу -->
+<p align="center">
+    <a href="another_page.html" target="_blank">
+        <img src="R:\ПССИП\Тем. Контроль HTML\Пекарь Маргарита Дмитриевна_В3\strelka.png" alt="Ссылка-картинка на другую страницу" width="100" height="40">
+    </a>
+</p>
+
+<!-- Внутренняя ссылка на текст ФИО -->
+<p align="center">
+    <a href="#fio_anchor">Внутренняя ссылка на ФИО</a>
+</p>
+
+<hr>
+
+<!-- ЗАДАНИЕ 6  -->
+<h3>Таблица</h3>
+<table border="1" cellpadding="8" cellspacing="0" width="60%">
+    <thead>
+        <tr bgcolor="#f2f2f2">
+            <th align="center">ФИО</th>
+            <th align="center">Должность</th>
+            <!-- Ячейка заголовка "Оклад" выделена цветом -->
+            <th align="center" bgcolor="#ADD8E6">Оклад</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Иванов</td>
+            <td align="center">Директор</td>
+            <td align="center">150</td>
+        </tr>
+        
+        <tr>
+            <td>Петров</td>
+            <td rowspan="2" align="center" valign="middle">Рабочий</td>
+            <td align="center">10</td>
+        </tr>
+        <tr>
+            <td>Сидоров</td>
+            <td align="center">10</td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<hr>
+
+<!-- ЗАДАНИЕ 7 -->
+<h3>Пользовательская форма</h3>
+<div>
+    <form action="#" method="post">
+
+        <div style="margin-bottom: 5px;">
+            <label><strong>Яндекс:</strong></label>
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <input type="text" name="search" size="30">
+            <input type="submit" value="Найти">
+        </div>
+        
+        <!-- Строка с чекбоксами -->
+        <div>
+            <label>
+                <input type="checkbox" name="sait"> на сайте
+            </label>
+            <label style="margin-left: 15px;">
+                <input type="checkbox" name="internet"> в интернете
+            </label>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+/* ИМПОРТ ШРИФТОВ из Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital@1&family=Roboto:wght@300;400;500&display=swap');
+
+/* СТИЛИ ДЛЯ body (переопределяются в основном файле) */
+body {
+    background: linear-gradient(135deg, #f5f0e8 0%, #e8d9c5 100%);
+}
+
+/* ПСЕВДОЭЛЕМЕНТ ::selection - стили для выделенного текста */
+::selection {
+    background: #c9a87c;
+    color: white;
+}
+
+/* СТИЛИЗАЦИЯ СКРОЛЛБАРА (для WebKit браузеров) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f5e6d3;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #c9a87c, #8b5a2b);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #8b5a2b;
+}

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ru"> 
+<head> 
+    <meta charset="UTF-8">
+    <title>Абиссинские кошки — портфолио</title>
+    
+    <!--  СПОСОБ 1: ВНЕШНИЙ ФАЙЛ (стили в отдельном файле)  -->
+    <!-- ТЕГ: link - подключение внешнего CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- СПОСОБ 2: ИМПОРТИРОВАНИЕ (через style.css) -->
+    <!-- СПОСОБ 3: ВНУТРЕННЯЯ ТАБЛИЦА СТИЛЕЙ -->
+    <style>
+        /* ВНУТРЕННИЕ СТИЛИ */
+        /* СЕЛЕКТОР: тег body */
+        body {
+            background: linear-gradient(135deg, #f5e6d3, #d4b28c);
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+        
+        /* СЕЛЕКТОР: класс .go-top */
+        .go-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #8b5a2b;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: 0.3s;
+            z-index: 1000;
+        }
+        
+        /* СЕЛЕКТОР: псевдокласс :hover для класса .go-top */
+        .go-top:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        /* СЕЛЕКТОР: медиа-запрос @media для печати */
+        @media print {
+            /* СЕЛЕКТОРЫ: теги nav, video, audio, iframe, form */
+            nav, video, audio, iframe, form, .go-top {
+                display: none;
+            }
+            body {
+                background: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body> 
+<header> 
+    <h1>Портфолио: Абиссинские кошки</h1> 
+    <p>Дата: <span id="current-date"></span> | Автор: Пекарь Маргарита Дмитриевна ПЗТ-42</p> <!-- ТЕГИ: p, span -->
+</header>
+
+<nav> 
+    <h2>Навигация по портфолио</h2> 
+    <ul> 
+        <li><a href="#about">О породе</a></li> <!-- ТЕГИ: li, a -->
+        <li><a href="#character">Характер</a></li>
+        <li><a href="#media">Видео и аудио</a></li>
+        <li><a href="#facts">Интересные факты</a></li>
+        <li><a href="#care">Уход и содержание</a></li>
+        <li><a href="#form">Анкета владельца</a></li>
+        <li><a href="#summary">Итоговая информация</a></li>
+    </ul>
+</nav>
+<hr> 
+<main> 
+
+    <!-- СЕКЦИЯ 1: О ПОРОДЕ -->
+    <section id="about"> 
+        <header> 
+            <h2>Общая информация об абиссинских кошках</h2>
+        </header>
+        
+        <article> 
+            <h3>История породы</h3> <!-- === ТЕГ: h3 === -->
+            
+            <!-- ======== СПОСОБ 4: ВНУТРИТЕГОВОЕ ВКЛЮЧЕНИЕ (ИНЛАЙН-СТИЛИ) ======== -->
+            <!-- АТРИБУТ: style - инлайн-стили прямо в теге -->
+            <p style="font-size: 1.2em; background: linear-gradient(45deg, transparent, rgba(201, 168, 124, 0.3)); padding: 20px; border-radius: 15px; border: 2px dashed #b46f3c; font-weight: 500; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <!-- ТЕГИ форматирования текста: b, i, u, mark, del, ins -->
+                <b>Абиссинская кошка</b> — одна из самых <i>древних</i> и <u>красивых</u> пород. Считается, что она произошла от <mark>диких африканских кошек</mark>. Первые представители породы попали в Европу после <del>войны</del> <ins>экспедиций</ins> в Эфиопию (бывшую Абиссинию).
+            </p>
+    
+            <p><big>Ключевая особенность:</big> <strong>тикированный окрас</strong> — каждая шерстинка имеет <em>несколько цветовых зон</em>. H<sub>2</sub>O не страшна, а прыгают они на высоту до 2<sup>x</sup> метров!</p>
+
+            <blockquote>
+                <p>"Абиссинцы — это не кошки, это маленькие пумы с характером королей"</p>
+            </blockquote>
+            <p><abbr title="Abyssinian cat">AC</abbr> — международное сокращение породы.</p>
+        </article>
+    </section>
+
+    <hr>
+
+    <!-- СЕКЦИЯ 2: ХАРАКТЕР -->
+    <section id="character"> <!-- === ТЕГ: section с id="character" === -->
+        <header>
+            <h2>Характер и поведение</h2>
+        </header>
+        
+        <article>  
+            <h3>Основные черты характера</h3>
+            <!-- ВЛОЖЕННЫЙ СПИСОК: ul > li > ul -->
+            <ul>
+                <li>Активные и игривые
+                    <ul>
+                        <li>Любят прыгать</li>
+                        <li>Обожают высоту</li>
+                    </ul>
+                </li>
+                <li>Преданные
+                    <ul>
+                        <li>Выбирают одного хозяина</li>
+                        <li>Следуют за ним по пятам</li>
+                    </ul>
+                </li>
+                <li>Любопытные
+                    <ul>
+                        <li>Открывают шкафы</li>
+                        <li>Проверяют сумки</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <h3>Топ-8 фактов об абиссинцах (начиная с 5-го места)</h3>
+            <!-- НУМЕРОВАННЫЙ СПИСОК: ol с start="5" -->
+            <ol start="5">
+                <!-- ИНЛАЙН-СТИЛИ для первого элемента списка -->
+                <li style="color: #b46f3c; font-weight: bold; list-style-type: '🐱 '; margin-bottom: 12px; font-size: 1.1em;">
+                    <b>Древнее происхождение</b> — изображения похожих кошек найдены в гробницах египетских фараонов
+                </li>
+                <li><b>Особый окрас</b> — тикинг создаёт эффект мерцающей шерсти</li>
+                <li><b>Кошки-собаки</b> — приносят игрушки и выполняют команды</li>
+                <li><b>Долгожители</b> — при хорошем уходе живут до 20 лет</li>
+                <li><b>Гипоаллергенность</b> — производят меньше белка Fel d1, вызывающего аллергию</li>
+                <li><b>Водные процедуры</b> — в отличие от большинства кошек, не боятся воды</li>
+                <li><b>Прыгучесть</b> — могут запрыгнуть на высоту до 2 метров с места</li>
+                <li><b>Голос</b> — имеют тихое, мелодичное мяуканье, похожее на звон колокольчика</li>
+            </ol>
+            
+            <p><i>Всего выделяют 8 уникальных особенностей абиссинской породы.</i></p>
+        </article>
+    </section>
+
+    <!-- СЕКЦИЯ 3: МЕДИА -->
+    <section id="media"> <!-- === ТЕГ: section с id="media" === -->
+        <header>
+            <h2>Видео и аудио</h2>
+        </header>
+        
+        <article>
+            <h3>Видео с абиссинскими кошками</h3>
+            <!-- ТЕГ: video с атрибутами controls, poster -->
+            <video width="600" controls poster="media/image.jpg">
+                <!-- ТЕГ: source для указания источника видео -->
+                <source src="media/video.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+            <p><b>Видео с абиссинскими кошками</b></p>
+    
+            <!-- ТЕГ: audio с атрибутом controls -->
+            <audio controls>
+                <source src="media/cat_sound.mp3" type="audio/mpeg">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                Ваш браузер не поддерживает аудио.
+            </audio>
+            <p>Мурлыканье абиссинца</p>
+            
+            <h3>Видео с YouTube</h3>
+            <!-- ТЕГ: iframe для встраивания YouTube видео -->
+            <iframe width="600" height="340" src="https://www.youtube.com/embed/b8zYYpD6SMU" frameborder="0" allowfullscreen></iframe>
+            <p>10 вопросов об абиссинской кошке: характер и поведение.</p>
+        </article>
+    </section>
+    
+    <!-- СЕКЦИЯ 4: ФАКТЫ -->
+    <section id="facts"> <!-- === ТЕГ: section с id="facts" === -->
+        <header>
+            <h2>Интересные факты</h2>
+        </header>
+        <article>
+            <h3>Ещё один нумерованный список (начинается с 10)</h3>
+            <ol start="10">
+                <li>Абиссинцы обожают высоту — им нужны высокие игровые комплексы</li>
+                <li>У них уникальный "поющий" голос с множеством интонаций</li>
+                <li>Окрас формируется полностью только к 1.5 годам</li>
+                <li>Абиссинцы легко обучаются открывать двери</li>
+                <li>В помёте обычно 3-4 котёнка</li>
+            </ol>
+        </article>
+    </section>
+    
+    <hr>
+    
+    <!-- СЕКЦИЯ 5: УХОД -->
+    <section id="care"> <!-- === ТЕГ: section с id="care" === -->
+        <header>
+            <h2>Уход и содержание</h2>
+        </header>
+        <article>
+            <h3>Рекомендации по уходу</h3>
+            <ol start="7">
+                <li><b>Питание</b> — премиум корма или сбалансированная натуральная пища</li>
+                <li><b>Груминг</b> — расчёсывание 1 раз в неделю, в период линьки 2-3 раза</li>
+                <li><b>Активность</b> — минимум 30 минут активных игр ежедневно</li>
+                <li><b>Здоровье</b> — вакцинация ежегодно, профилактические осмотры</li>
+            </ol>
+        </article>
+    </section>
+    
+    <hr>
+    
+    <!--СЕКЦИЯ 6: ФОРМА -->
+    <section id="form"> <!-- === ТЕГ: section с id="form" === -->
+        <header>
+            <h2>Анкета владельца абиссинской кошки</h2>
+        </header>
+        
+        <article>
+            <form action="#" method="post">
+                <!-- ТЕГ: fieldset - группировка полей формы -->
+                <fieldset>
+                    <legend>О владельце</legend>
+                    <p>
+                        <label for="name">Ваше имя:</label><br>
+                        <input type="text" id="name" name="name" placeholder="Иван Иванов" required>
+                    </p>
+                    <p>
+                        <label for="email">Email:</label><br>
+                        <input type="email" id="email" name="email" placeholder="catlover@example.com" required>
+                    </p>
+                    <p>
+                        <label for="phone">Телефон:</label><br>
+                        <input type="tel" id="phone" name="phone" placeholder="+375 (29) 123-45-67">
+                    </p>
+                    <p>
+                        <label for="age">Ваш возраст:</label><br>
+                        <input type="number" id="age" name="age" min="16" max="100">
+                    </p>
+                    <p>
+                        <label for="city">Город:</label><br>
+                        <input type="text" id="city" name="city" placeholder="Минск">
+                    </p>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>О кошке</legend>
+                    <p>
+                        <label for="cat_name">Кличка кошки:</label><br>
+                        <input type="text" id="cat_name" name="cat_name" placeholder="Симба, Клеопатра..." required>
+                    </p>
+                    <p>
+                        <label for="age_cat">Возраст кошки:</label><br>
+                        <input type="number" id="age_cat" name="age_cat" min="0" max="25">
+                    </p>
+                    <p>
+                        <label for="color_cat">Окрас:</label><br>
+                        <!-- ТЕГ: select - выпадающий список -->
+                        <select id="color_cat" name="color_cat">
+                            <!-- ТЕГ: option - элемент списка -->
+                            <option value="ruddy">Руди (дикий)</option>
+                            <option value="sorrel">Соррель</option>
+                            <option value="blue">Блю</option>
+                            <option value="fawn">Фавн</option>
+                            <option value="silver">Серебристый</option>
+                            <option value="other">Другой</option>
+                        </select>
+                    </p>
+                    <p>
+                        Пол кошки:<br>
+                        <!-- ТЕГ: input с type="radio" - радиокнопки -->
+                        <input type="radio" id="male_cat" name="gender_cat" value="male">
+                        <label for="male_cat">Мальчик</label><br>
+                        <input type="radio" id="female_cat" name="gender_cat" value="female">
+                        <label for="female_cat">Девочка</label>
+                    </p>
+                    <p>
+                        Качества кошки:<br>
+                        <!-- ТЕГ: input с type="checkbox" - чекбоксы -->
+                        <input type="checkbox" id="active" name="traits[]" value="active">
+                        <label for="active">Активная</label><br>
+                        <input type="checkbox" id="affectionate" name="traits[]" value="affectionate">
+                        <label for="affectionate">Ласковая</label><br>
+                        <input type="checkbox" id="curious" name="traits[]" value="curious">
+                        <label for="curious">Любопытная</label><br>
+                        <input type="checkbox" id="smart" name="traits[]" value="smart">
+                        <label for="smart">Умная</label>
+                    </p>
+                    <p>
+                        <label for="food">Чем кормите?</label><br>
+                        <!-- ТЕГ: select с multiple - множественный выбор -->
+                        <select id="food" name="food" multiple size="4">
+                            <option value="dry">Сухой корм</option>
+                            <option value="wet">Влажный корм</option>
+                            <option value="natural">Натуралка</option>
+                            <option value="mixed">Смешанное</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="story">История кошки:</label><br>
+                        <textarea id="story" name="story" rows="6" cols="60" placeholder="Расскажите о вашей кошке..."></textarea>
+                    </p>
+                    <p>
+                        <label for="rating">Оцените породу (от 1 до 10):</label><br>
+                        <!-- ТЕГ: input с type="range" - ползунок -->
+                        <input type="range" id="rating" name="rating" min="1" max="10" value="10">
+                        <!-- ТЕГ: output - отображение значения -->
+                        <output for="rating" id="rating-value">10</output>
+                    </p>
+                </fieldset>
+                
+                <p>
+                    <!-- ТЕГ: input с type="submit" - кнопка отправки -->
+                    <input type="submit" value="Отправить анкету">
+                    <!-- ТЕГ: input с type="reset" - кнопка сброса -->
+                    <input type="reset" value="Очистить">
+                </p>
+            </form>
+        </article>
+    </section>
+
+    <hr>
+    
+    <!-- СЕКЦИЯ 7: ИТОГОВАЯ ИНФОРМАЦИЯ  -->
+    <section id="summary"> <!-- === ТЕГ: section с id="summary" === -->
+        <header>
+            <h2>Итоговая информация об абиссинцах</h2>
+        </header>
+        
+        <article>
+           <table border="1" cellspacing="0" cellpadding="8" style="border-collapse: collapse; width: 100%;">
+                <!-- ТЕГ: caption - заголовок таблицы -->
+                <caption>Таблица 2. Комплексная информация о породе</caption>
+                <thead>
+                    <tr> <!-- ТЕГ: tr - строка таблицы -->
+                        <th>Категория</th> <!-- ТЕГ: th - ячейка заголовка -->
+                        <th>Описание</th>
+                        <th>Пример</th>
+                        <th>Ссылка</th>
+                    </tr>
+                </thead>
+                <!-- ТЕГ: tbody - тело таблицы -->
+                <tbody>
+                    <tr>
+                        <td><b>Порода</b></td> <!-- ТЕГ: td - ячейка данных -->
+                        <td>Абиссинская кошка</td>
+                        <td>
+                            <!-- ТЕГ: img - изображение с обработкой ошибки -->
+                            <img src="media/image.jpg" alt="Абиссинская кошка" width="80" onerror="this.src='data:image/svg+xml,%3Csvg width=\'80\' height=\'60\'%3E%3Crect width=\'80\' height=\'60\' fill=\'%23b87333\'/%3E%3Ctext x=\'10\' y=\'35\' fill=\'white\'%3EКошка%3C/text%3E%3C/svg%3E'">
+                        </td>
+                        <!-- ТЕГ: td с rowspan="5" - объединение строк -->
+                        <td rowspan="5"><a href="http://ggpk.by" target="_blank">ggpk.by</a></td>
+                    </tr>
+                    <tr>
+                        <td><b>Окрас</b></td>
+                        <td>Руди (дикий)</td>
+                        <td>Коричневый с черным</td>
+                    </tr>
+                    <tr>
+                        <td><b>Характер</b></td>
+                        <td>Активный, любопытный</td>
+                        <td>
+                            <!-- Вложенный список в ячейке таблицы -->
+                            <ul style="margin: 0; padding-left: 20px;">
+                                <li>Игривый</li>
+                                <li>Преданный</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Продолжительность жизни</b></td>
+                        <td>15-20 лет</td>
+                        <td>Требуют ухода</td>
+                    </tr>
+                    <tr>
+                        <td><b>Особенность</b></td>
+                        <td>Тикированный окрас</td>
+                        <td>4-6 полос на волосе</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>Итоговые рекомендации (нумерация продолжается)</h3>
+            <ol start="12">
+                <li>Посетите ветеринара раз в полгода</li>
+                <li>Обеспечьте доступ к свежей воде</li>
+                <li>Купите когтеточку высотой не менее 1 метра</li>
+                <li>Уделяйте время общению с питомцем</li>
+                <li>Следите за весом кошки</li>
+            </ol>
+        </article>
+    </section>
+
+</main>
+
+<hr>
+
+<!-- ПОДВАЛ  -->
+<footer>
+    <p><b>Портфолио "Абиссинские кошки"</b> | Учебный проект</p>
+    <p>
+        <a href="http://ggpk.by" target="_blank">Главный портал ggpk.by</a> |  
+        <a href="#top">Наверх страницы</a>
+    </p>
+    <p>HTML5 | CSS3</p>
+    
+    <!-- ИНЛАЙН-СТИЛИ с JavaScript событиями -->
+    <p style="background: linear-gradient(90deg, #c9a87c, #8b5a2b); padding: 15px 25px; border-radius: 40px; display: inline-block; color: white; font-weight: bold; box-shadow: 0 5px 20px rgba(0,0,0,0.3); transform: translateY(0); transition: 0.3s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+        <small>Сайт создан: 27<sup>th</sup> February 2026 | Версия 1.0<sub>beta</sub></small>
+    </p>
+</footer>
+
+<!-- Кнопка наверх с классом go-top -->
+<a href="#" class="go-top">↑ Наверх</a>
+
+</body>
+</html>

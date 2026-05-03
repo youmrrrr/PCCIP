@@ -1,0 +1,10 @@
+/* Стили для body (импортируются в style.css) */
+body {
+    background-image: url("R:/ПССИП/Тем.Контроль/image/fon.jpg");
+    background-repeat: repeat;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16pt;
+    color: #000000;
+    margin: 20px;
+    padding: 20px;
+}
