@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Абсолютно фиксированная сетка</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-width: 1530px;
+            background: rgb(89, 2, 32);
+            overflow-x: auto;
+        }
+
+        /* Фиксированный контейнер */
+        #main {
+            width: 1530px;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 230px 1300px;
+            grid-template-rows: auto;
+            grid-template-areas:
+                "left content";
+        }
+
+        /* Левая панель */
+        #levo {
+            grid-area: left;
+            display: flex;
+            flex-direction: column;
+            height: 560px;
+        }
+
+        /* Контентная область */
+        #kontent {
+            grid-area: content;
+            display: flex;
+            flex-direction: column;
+            height: 560px;
+        }
+
+        /* Навигация — 280px высоты */
+        #levo nav {
+            height: 280px;
+            width: 230px;
+            background: rgb(240, 198, 152);
+            padding: 1em;
+        }
+
+        /* Под навигацией — 280px высоты */
+        #levo #pod_nav {
+            height: 280px;
+            width: 230px;
+            background: rgb(224, 153, 99);
+            padding: 1em;
+        }
+
+        /* Каждая из 4 строк контента — 140px высоты */
+        #kontent1, #kontent2, #kontent3, #kontent4 {
+            height: 140px;
+        }
+
+        /* Строка 1: горизонтальные блоки */
+        #kontent1 {
+            display: flex;
+        }
+
+        /* Строка 3: горизонтальные блоки */
+        #kontent3 {
+            display: flex;
+        }
+
+        /* Блоки внутри горизонтальных строк — фиксированная ширина 650px */
+        #kontent1_1, #kontent1_2, #kontent2_1, #kontent2_2 {
+            width: 650px;
+        }
+
+        /* Цвета как в оригинале */
+        #kontent1_1 {
+            background: rgb(42, 1, 13);
+            color: #db5b5b;
+            padding: 1em;
+        }
+
+        #kontent1_2 {
+            background: #db7f5b;
+            padding: 1em;
+        }
+
+        #kontent2 {
+            background: rgb(255, 255, 255);
+            padding: 1em;
+            width: 1300px;
+        }
+
+        #kontent2_1 {
+            background: rgb(42, 1, 13);
+            color: #db5b5b;
+            padding: 1em;
+        }
+
+        #kontent2_2 {
+            background: #db7f5b;
+            padding: 1em;
+        }
+
+        #kontent4 {
+            background: rgb(255, 255, 255);
+            padding: 1em;
+            width: 1300px;
+        }
+
+        /* Шапка — фиксированная ширина 1530px, высота 70px */
+        header {
+            background: rgb(89, 2, 32);
+            width: 1530px;
+            height: 70px;
+            color: #f9f9f9;
+            padding: 1em;
+        }
+
+        /* Подвал — фиксированная ширина 1530px, высота 100px */
+        footer {
+            background: rgb(89, 2, 32);
+            width: 1530px;
+            height: 100px;
+            color: #f9f9f9;
+            padding: 1em;
+        }
+
+        /* Для всех блоков с текстом */
+        header, footer, nav, #pod_nav, #kontent1_1, #kontent1_2, #kontent2, #kontent2_1, #kontent2_2, #kontent4 {
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ШАПКА САЙТА -->
+    <header>Шапка</header>
+    
+    <!-- ОСНОВНОЕ СОДЕРЖИМОЕ -->
+    <div id="main">
+        
+        <!-- ЛЕВАЯ ПАНЕЛЬ -->
+        <div id="levo">
+            <nav>Навигация</nav>
+            <div id="pod_nav">Под навигацией</div>
+        </div>
+        
+        <!-- ПРАВАЯ ЧАСТЬ -->
+        <div id="kontent">
+            <div id="kontent1">
+                <div id="kontent1_1">1_1</div>
+                <div id="kontent1_2">1_2</div>
+            </div>
+            <div id="kontent2">2</div>
+            <div id="kontent3">
+                <div id="kontent2_1">2_1</div>
+                <div id="kontent2_2">2_2</div>
+            </div>
+            <div id="kontent4">4</div>
+        </div>
+        
+    </div>
+    
+    <!-- ПОДВАЛ -->
+    <footer>Подвал</footer>
+</body>
+
+</html>

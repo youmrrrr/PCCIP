@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивная сетка</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        #main {
+            flex: 1;  /* Занимает всё место между шапкой и подвалом (как flex:1 в первом примере) */
+            display: grid;
+            /* Левая панель = 15vw (как в первом примере), остальное — контент */
+            grid-template-columns: 15vw 1fr;
+            grid-template-rows: auto;  /* Автоматическая высота */
+            grid-template-areas:
+                "left content";
+        }
+
+        /* Левая панель (полная высота) */
+        #levo {
+            grid-area: left;
+            display: flex;
+            flex-direction: column;
+            background: transparent;
+        }
+
+        /* Контентная область */
+        #kontent {
+            grid-area: content;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Навигация — 50% высоты левой панели */
+        #levo nav {
+            flex: 50%;
+            background: rgb(240, 198, 152);
+            padding: 1em;
+        }
+
+        /* Под навигацией — 50% высоты левой панели */
+        #levo #pod_nav {
+            flex: 50%;
+            background: rgb(224, 153, 99);
+            padding: 1em;
+        }
+
+        /* Каждая из 4 строк контента занимает 25% высоты контентной области */
+        #kontent1, #kontent2, #kontent3, #kontent4 {
+            flex: 25%;
+        }
+
+        /* Строка 1: горизонтальные блоки */
+        #kontent1 {
+            display: flex;
+        }
+
+        /* Строка 3: горизонтальные блоки */
+        #kontent3 {
+            display: flex;
+        }
+
+        /* Блоки внутри горизонтальных строк — по 50% ширины */
+        #kontent1_1, #kontent1_2, #kontent2_1, #kontent2_2 {
+            flex: 50%;
+        }
+
+        /* Цвета как в первом примере */
+        #kontent1_1 {
+            background: rgb(42, 1, 13);
+            color: #db5b5b;
+            padding: 1em;
+        }
+
+        #kontent1_2 {
+            background: #db7f5b;
+            padding: 1em;
+        }
+
+        #kontent2 {
+            background: rgb(255, 255, 255);
+            padding: 1em;
+        }
+
+        #kontent2_1 {
+            background: rgb(42, 1, 13);
+            color: #db5b5b;
+            padding: 1em;
+        }
+
+        #kontent2_2 {
+            background: #db7f5b;
+            padding: 1em;
+        }
+
+        #kontent4 {
+            background: rgb(255, 255, 255);
+            padding: 1em;
+        }
+
+        /* Шапка — 10vh как в первом примере */
+        header {
+            background: rgb(89, 2, 32);
+            height: 10vh;
+            color: #f9f9f9;
+            padding: 1em;
+        }
+
+        /* Подвал — 15vh как в первом примере */
+        footer {
+            background: rgb(89, 2, 32);
+            height: 15vh;
+            color: #f9f9f9;
+            padding: 1em;
+        }
+
+        /* Для всех блоков с текстом */
+        header, footer, nav, #pod_nav, #kontent1_1, #kontent1_2, #kontent2, #kontent2_1, #kontent2_2, #kontent4 {
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ШАПКА САЙТА (10vh) -->
+    <header>Шапка</header>
+    
+    <!-- ОСНОВНОЕ СОДЕРЖИМОЕ (растягивается между шапкой и подвалом) -->
+    <div id="main">
+        
+        <!-- ЛЕВАЯ ПАНЕЛЬ (15vw, внутри два блока по 50% высоты) -->
+        <div id="levo">
+            <nav>Навигация</nav>
+            <div id="pod_nav">Под навигацией</div>
+        </div>
+        
+        <!-- ПРАВАЯ ЧАСТЬ: МОДУЛЬНАЯ СЕТКА КОНТЕНТА (4 строки по 25% высоты) -->
+        <div id="kontent">
+            <!-- Строка 1: два блока по горизонтали -->
+            <div id="kontent1">
+                <div id="kontent1_1">1_1</div>
+                <div id="kontent1_2">1_2</div>
+            </div>
+            <!-- Строка 2: один блок на всю ширину -->
+            <div id="kontent2">2</div>
+            <!-- Строка 3: два блока по горизонтали -->
+            <div id="kontent3">
+                <div id="kontent2_1">2_1</div>
+                <div id="kontent2_2">2_2</div>
+            </div>
+            <!-- Строка 4: один блок на всю ширину -->
+            <div id="kontent4">4</div>
+        </div>
+        
+    </div>
+    
+    <!-- ПОДВАЛ (15vh) -->
+    <footer>Подвал</footer>
+</body>
+
+</html>
