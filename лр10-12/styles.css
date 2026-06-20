@@ -1,0 +1,137 @@
+/* Общие стили страницы */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    color: #1f2937;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #1e3a8a;
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+header p {
+    color: #4b5563;
+    font-size: 15px;
+}
+
+/* Карточки задач */
+.task {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    padding: 22px 26px;
+    margin: 0 auto 24px;
+    max-width: 820px;
+}
+
+.task h2 {
+    color: #1e40af;
+    border-bottom: 2px solid #dbeafe;
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+    font-size: 20px;
+}
+
+.task .condition {
+    background: #f8fafc;
+    border-left: 4px solid #3b82f6;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+/* Кнопки */
+.btn {
+    background: #3b82f6;
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    font-size: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+    margin-right: 8px;
+}
+
+.btn:hover {
+    background: #2563eb;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn-success {
+    background: #10b981;
+}
+
+.btn-success:hover {
+    background: #059669;
+}
+
+/* Блоки вывода */
+.output {
+    margin-top: 16px;
+    padding: 14px;
+    background: #0f172a;
+    color: #e2e8f0;
+    border-radius: 8px;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 14px;
+    min-height: 24px;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.output-light {
+    background: #f1f5f9;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+}
+
+.output .line {
+    display: block;
+}
+
+/* Поля ввода */
+.field {
+    margin-bottom: 12px;
+}
+
+.field label {
+    display: inline-block;
+    width: 90px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.field input {
+    padding: 7px 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    width: 140px;
+}
+
+footer {
+    text-align: center;
+    color: #6b7280;
+    margin-top: 30px;
+    font-size: 13px;
+}

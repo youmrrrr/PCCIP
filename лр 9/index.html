@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практическая работа по JS</title>
+    
+    <!-- Подключение CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Способ 1: Внутренний скрипт в head -->
+    <script>
+        console.log("✅ Способ 1: Скрипт в head");
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Практическая работа по JavaScript</h1>
+            <p class="subtitle">Все способы внедрения, операторы и диалоговые окна</p>
+        </header>
+
+        <!-- Способ 2: Внутренний скрипт в body -->
+        <script>
+            console.log("✅ Способ 2: Скрипт в body");
+        </script>
+
+        <section class="section">
+            <h2>Способы внедрения JS</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Способ 1</h3>
+                    <p>Скрипт в &lt;head&gt;</p>
+                    <span class="badge green">✓ Выполнен</span>
+                </div>
+                <div class="card">
+                    <h3>Способ 2</h3>
+                    <p>Скрипт в &lt;body&gt;</p>
+                    <span class="badge green">✓ Выполнен</span>
+                </div>
+                <div class="card">
+                    <h3>Способ 3</h3>
+                    <p>Inline (onclick)</p>
+                    <!-- Способ 3: Inline скрипт -->
+                    <button onclick="console.log('✅ Способ 3: Inline событие')" class="btn btn-inline">
+                        Нажми для inline JS
+                    </button>
+                </div>
+                <div class="card">
+                    <h3>Способ 4</h3>
+                    <p>Внешний файл</p>
+                    <span class="badge blue">✓ Подключён</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Операторы JavaScript</h2>
+            <p class="hint">Все операторы: if, switch, for, while, do..while, break, continue, return</p>
+            <button onclick="showOperators()" class="btn btn-primary">
+                ▶ Показать работу операторов
+            </button>
+            <div id="operatorsResult" class="result-box"></div>
+        </section>
+
+        <section class="section">
+            <h2>Диалоговые окна</h2>
+            <p class="hint">Методы: alert(), confirm(), prompt()</p>
+            <div class="button-group">
+                <button onclick="showAlert()" class="btn btn-danger">⚠ Alert</button>
+                <button onclick="showConfirm()" class="btn btn-warning">❓ Confirm</button>
+                <button onclick="showPrompt()" class="btn btn-success">✏ Prompt</button>
+            </div>
+            <div id="dialogResult" class="result-box"></div>
+        </section>
+
+        <footer>
+            <p>Практическая работа выполнена</p>
+        </footer>
+    </div>
+
+    <!-- Способ 4: Подключение внешнего JS файла -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивная Верстка с Контентом</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="main">
+        <header>Шапка</header>
+        <div id="kontent1_1">1_1</div>
+        <div id="kontent1_2">1_2</div>
+        
+        <div id="kontent2">
+            <h2 class="order-title">Оформить заказ ↓</h2>
+            <form id="orderForm" class="order-grid">
+                <div class="order-col">
+                    <div class="form-group">
+                        <label><span class="required">*</span> Имя, Отчество:</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>E-Mail:</label>
+                        <input type="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label><span class="required">*</span> Телефон:</label>
+                        <input type="tel" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Город:</label>
+                        <input type="text" name="city">
+                    </div>
+                    <div class="form-group">
+                        <label>Почтовый индекс:</label>
+                        <input type="text" name="zip">
+                    </div>
+                    <div class="form-group">
+                        <label>Адрес:</label>
+                        <input type="text" name="address">
+                    </div>
+                </div>
+                
+                <div class="order-col">
+                    <div class="form-group">
+                        <label><span class="required">*</span> Регион / Область:</label>
+                        <select name="region" required>
+                            <option value=""> --- Выберите --- </option>
+                            <option value="1">Московская обл.</option>
+                            <option value="2">Ленинградская обл.</option>
+                            <option value="3">Новосибирская обл.</option>
+                        </select>
+                    </div>
+                    
+                    <div class="radio-group">
+                        <p><strong>Выберите удобный способ доставки для этого заказа:</strong></p>
+                        <div class="radio-item">
+                            <label>
+                                <input type="radio" name="delivery" value="fixed" checked> 
+                                Фиксированная стоимость доставки
+                            </label>
+                            <span class="delivery-price">$5.00</span>
+                        </div>
+                    </div>
+
+                    <div class="radio-group">
+                        <p><strong>Выберите способ оплаты для этого заказа:</strong></p>
+                        <div class="radio-item">
+                            <label>
+                                <input type="radio" name="payment" value="cod" checked> 
+                                Оплата при доставке
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Вы можете добавить комментарий к своему заказу:</label>
+                        <textarea name="comment" rows="5"></textarea>
+                    </div>
+                </div>
+
+                <div class="submit-box">
+                    <button type="submit" class="btn-submit">Оформить</button>
+                </div>
+            </form>
+        </div>
+        
+        <div id="kontent2_1">2_1</div>
+        <div id="kontent2_2">2_2</div>
+        
+        <div id="kontent4">
+            <div class="product-card">
+                <div class="card-icons">
+                    <span class="icon-heart" id="favBtn">♡</span>
+                    <span class="icon-cart" id="cartBtn">🛒</span>
+                </div>
+                <div class="badge-container">
+                    <div class="badge-credit">КРЕДИТ<br>до 36 мес</div>
+                    <div class="badge-installment">РАССРОЧКА<br>до 6 мес</div>
+                </div>
+                
+                <div class="product-img-wrapper">
+                    <img src="file:///R:/ПССИП/ПССИП%20Git/лр%208/image.png" alt="Светодиодная RGB лента Tapo L920-5" class="product-img">
+                </div>
+
+                <div class="product-cat">Потолочные светильники</div>
+                <div class="product-name">Светодиодная RGB лента Tapo L920-5</div>
+                
+                <div class="price-box">
+                    <span class="price-label">Супер цена: </span>
+                    <span class="price-current">199<small>.00</small></span>
+                    <span class="price-old">242.68</span>
+                </div>
+
+                <div class="bonus-info">
+                    🦝 Вернём до <strong>7.28</strong> на бонусную карту
+                </div>
+                <div class="footnote">*тип рассрочки при которой скидка не действует</div>
+            </div>
+        </div>
+        
+        <nav>Навигация</nav>
+        <div id="pod_nav">Под навигацией</div>
+        <footer>Подвал</footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

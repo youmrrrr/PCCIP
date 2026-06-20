@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вариант №5 — Тематический контроль (JavaScript)</title>
+
+    <!-- Внешняя таблица стилей -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- ЗАДАЧА 1. Скрипт размещается в <head>                          -->
+    <script>
+        function showTime() {
+            var now = new Date();
+            var hour = now.getHours();
+            window.alert("Текущий час: " + hour);
+            document.getElementById("out1").innerHTML = "Текущий час: " + hour;
+        }
+    </script>
+    <!-- ============================================================== -->
+
+    <!-- ЗАДАЧА 4. Внешний скрипт (по условию задания) — расчёт по формуле с Math -->
+    <script src="task4.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Вариант №5</h1>
+        <p>Тематический контроль знаний.<br>
+           Раздел: «Программирование на стороне клиента на языке JavaScript»</p>
+    </header>
+
+    <!-- ===================== ЗАДАЧА 1 ===================== -->
+    <section class="task">
+        <h2>Задача 1. Работа с объектом Date</h2>
+        <div class="condition">
+            Вывести в диалоговое окно текущий час.<br>
+            <em>Скрипт размещается в &lt;head&gt;.</em>
+        </div>
+        <button class="btn" id="btnTime">Время</button>
+        <div class="output output-light" id="out1">Нажмите на кнопку «Время».</div>
+    </section>
+
+    <!-- ===================== ЗАДАЧА 2 ===================== -->
+    <section class="task">
+        <h2>Задача 2. Работа с оператором циклов</h2>
+        <div class="condition">
+            Вывести Фамилию и Имя 40 раз с помощью оператора цикла.<br>
+            <em>Скрипт размещается в &lt;body&gt;.</em>
+        </div>
+        <button class="btn" id="btnName">Вывести ФИО</button>
+        <div class="output" id="out2">Здесь появится результат (40 строк).</div>
+    </section>
+
+    <!-- ===================== ЗАДАЧА 3 ===================== -->
+    <section class="task">
+        <h2>Задача 3. Работа с объектом Array</h2>
+        <div class="condition">
+            Сформировать массив из 5 целых элементов. Найти произведение
+            нечётных элементов массива.<br>
+            <em>Скрипт размещается в &lt;body&gt;.</em>
+        </div>
+        <button class="btn" id="btnArr">Рассчитать</button>
+        <div class="output" id="out3">Здесь появится результат расчёта.</div>
+    </section>
+
+    <!-- ===================== ЗАДАЧА 4 ===================== -->
+    <section class="task">
+        <h2>Задача 4. Работа с объектом Math</h2>
+        <div class="condition">
+            Расчёт по формуле: &nbsp;
+            y = (3 + (x − 1)<sup>2</sup>) / (a − cos(x))<br>
+            Требования: расчёт по формуле, пользовательская функция,
+            результат через <code>return</code>, вывод в тело документа.<br>
+            <em>Способ внедрения — внешний скрипт (task4.js).</em>
+        </div>
+        <div class="field">
+            <label for="inputX">x =</label>
+            <input type="text" id="inputX" value="2">
+        </div>
+        <div class="field">
+            <label for="inputA">a =</label>
+            <input type="text" id="inputA" value="1.5">
+        </div>
+        <button class="btn btn-success" id="btnMath">Рассчитать y</button>
+        <div class="output" id="out4">Здесь появится результат расчёта.</div>
+    </section>
+
+    <!-- ===================== ЗАДАЧА 5 ===================== -->
+    <section class="task">
+        <h2>Задача 5. Работа со строками STRING</h2>
+        <div class="condition">
+            S1 = имя, S2 = адрес.<br>
+            1) определить длину строки S2;<br>
+            2) сцепление строк S1 и S2;<br>
+            3) преобразовать S1 в верхний регистр.<br>
+            <em>Способ внедрения — внешний скрипт.</em>
+        </div>
+        <button class="btn" id="btnStr">Обработать строки</button>
+        <div class="output" id="out5">Здесь появится результат обработки строк.</div>
+    </section>
+
+    <footer>
+        © Тематический контроль знаний — Вариант №5
+    </footer>
+
+    <!-- ЗАДАЧА 2. Скрипт размещается в <body>                         -->
+    <script>
+        function printName() {
+            var surname = "Пекарь";
+            var name   = "Маргарита";
+            var result = "";
+            for (var i = 1; i <= 40; i++) {
+                result += i + ". " + surname + " " + name + "\n";
+            }
+            document.getElementById("out2").textContent = result;
+        }
+    </script>
+
+    <!-- ЗАДАЧА 3. Скрипт размещается в <body>                         -->
+    <script>
+        function multiplyOdd() {
+            var arr = [3, 6, 7, 8, 5];
+            var product = 1;
+            var found = false;
+
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 !== 0) {
+                    product *= arr[i];
+                    found = true;
+                }
+            }
+
+            var html = "Массив: [" + arr.join(", ") + "]\n";
+            if (found) {
+                html += "Произведение нечётных элементов = " + product;
+            } else {
+                html += "Нечётных элементов нет.";
+            }
+            document.getElementById("out3").textContent = html;
+        }
+    </script>
+    <!-- ============================================================== -->
+
+    <!-- ============================================================== -->
+    <!-- ЗАДАЧА 5. Скрипт размещается в <body> (внешний файл)          -->
+    <!-- ============================================================== -->
+    <script src="script.js"></script>
+
+    <!-- Инициализация обработчиков для кнопок -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Кнопка «Время» (задача 1) — функция в <head>
+            var btnTime = document.getElementById("btnTime");
+            if (btnTime) {
+                btnTime.addEventListener("click", showTime);
+            }
+
+            // Кнопка «Вывести ФИО» (задача 2) — функция в <body>
+            var btnName = document.getElementById("btnName");
+            if (btnName) {
+                btnName.addEventListener("click", printName);
+            }
+
+            // Кнопка «Рассчитать» (задача 3) — функция в <body>
+            var btnArr = document.getElementById("btnArr");
+            if (btnArr) {
+                btnArr.addEventListener("click", multiplyOdd);
+            }
+
+            // Кнопка «Рассчитать y» (задача 4) — функция из task4.js
+            var btnMath = document.getElementById("btnMath");
+            if (btnMath) {
+                btnMath.addEventListener("click", calculateFormula);
+            }
+
+            // Кнопка «Обработать строки» (задача 5) — функция из внешнего файла script.js
+            var btnStr = document.getElementById("btnStr");
+            if (btnStr) {
+                btnStr.addEventListener("click", processStrings);
+            }
+        });
+    </script>
+
+</body>
+</html>
